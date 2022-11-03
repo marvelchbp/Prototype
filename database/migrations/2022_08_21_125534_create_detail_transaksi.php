@@ -18,8 +18,11 @@ return new class extends Migration
             $table->integer('fk_id_htrans');
             $table->string('fk_kode_barang',30);
             $table->integer('qty');
-            $table->double('harga',8,2);
-            $table->double('total',8,2);
+            $table->string('nama_barang',150);
+            $table->string('satuan',7);
+            $table->double('harga_barang',8,2);
+            $table->integer('discount')->nullable($value = true);
+            $table->double('total',9,2);
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });

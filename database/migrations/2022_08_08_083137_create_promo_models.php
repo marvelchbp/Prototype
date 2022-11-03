@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('promo_models', function (Blueprint $table) {
             $table->string('kode_promo',30)->primary();
-            $table->string('deskripsi_promo',255);
+            $table->string('deskripsi_promo',255)->nullable($value = true);
             $table->integer('potongan');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);

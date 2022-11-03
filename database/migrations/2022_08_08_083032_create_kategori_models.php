@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('kategori_models', function (Blueprint $table) {
-            $table->string('kode_kategori',2)->primary();
+            $table->string('kode_kategori',3)->primary();
             $table->string('nama_kategori',100);
             $table->integer('jumlah_barang')->nullable($value = true);
             $table->timestamps();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('member_models', function (Blueprint $table) {
             $table->integer('kode_member')->autoIncrement();
             $table->string('nama_member',255);
+            $table->string('wilayah',255)->nullable($value = true);
             $table->string('alamat',255)->nullable($value = true);
             $table->string('nomor_telepon_member',15)->nullable($value = true);
             $table->timestamps();

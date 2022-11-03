@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('barang_models', function (Blueprint $table) {
             $table->string('kode_barang',30)->primary();
+            $table->string('barcode',255)->nullable($value = true);
             $table->string('nama_barang',150);
+            $table->string('kategori',3);
+            $table->string('satuan',7);
             $table->double('harga_grosir',8,2);
             $table->double('harga_eceran',8,2);
-            $table->string('satuan',7);
-            $table->integer('faktor');
+            $table->double('harga_khusus',8,2)->nullable($value = true);
             $table->integer('stock');
             $table->string('deskripsi',255)->nullable($value = true);
             $table->timestamps();

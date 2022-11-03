@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
-            $table->string('nomor_telepon_pegawai',15)->nullable($value = true);
+            $table->string('phone',15)->nullable($value = true);
             $table->string('jabatan',10)->nullable($value = true);
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
